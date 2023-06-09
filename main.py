@@ -2,8 +2,6 @@ import telegram
 import requests
 import time
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
-from typing import Dict
-from collections.abc import Mapping
 
 # Define the function to handle the /check command
 def check_command(update, context):
@@ -51,7 +49,7 @@ def check_command(update, context):
     except Exception as e:
         # Handle other exceptions
         reply_message = f"An error occurred: {str(e)}"
-        context.bot.send_message(chat_id=update.effective_chat.id, text=reply_message)        context.bot.send_message(chat_id=update.effective_chat.id, text=reply_message)
+        context.bot.send_message(chat_id=update.effective_chat.id, text=reply_message)
 
 # Define the function to handle the callback query for the special button
 def button_callback(update, context):
